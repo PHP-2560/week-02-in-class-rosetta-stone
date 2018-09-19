@@ -54,7 +54,7 @@ hist(rain.df$daily)
 
 ```{r}
 rain.df[rain.df < 0] <- 0
-#rain.df <- mutate(rain.df, daily= rowSums(rain.df,4:27))
+rain.df <- mutate(rain.df, daily= rowSums(rain.df,4:27))
 hist(rain.df$daily)
 
 
