@@ -38,6 +38,7 @@ tail(rain.df)
 ```{r}
 rain.df$daily= apply(rain.df[,4:27], 1, sum)
 hist(rain.df$daily)
+
 ```
 
 **The histogram is unclear because there are a lot of zeros in the dataset**
