@@ -46,8 +46,7 @@ library(dplyr)
 rain.df <- mutate(rain.df, daily= rowSums(rain.df,4:27))
 rain.df
 hist(rain.df$daily)
-#rain.df$daily  apply(rain.df[,4:27]), 1, sum)
-  
+
 ```
 
 8. Create a new data frame rain.df.fixed that takes the original and fixes it for the apparent flaw you have discovered. Having done this, produce a new histogram with the corrected data and explain why this is more reasonable.
