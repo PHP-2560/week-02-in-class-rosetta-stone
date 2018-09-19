@@ -2,9 +2,9 @@
 
 Have one person fill in the names of who is doing this:
 
-1. _______________________________
-2. _______________________________
-3. _______________________________
+1. Frank DeVone
+2. Nadia Mercado
+3. Kira Raskina
 4. _______________________________
 
 # In-Class
