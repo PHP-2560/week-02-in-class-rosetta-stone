@@ -64,6 +64,13 @@ hist(rain.df$daily)
 ```
 
 8. Create a new data frame rain.df.fixed that takes the original and fixes it for the apparent flaw you have discovered. Having done this, produce a new histogram with the corrected data and explain why this is more reasonable.
+```{r}
+
+
+
+
+```
+
 
 ## Part 2
 ### New York City Flights 13
