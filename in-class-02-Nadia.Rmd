@@ -36,8 +36,10 @@ tail(rain.df)
 
 7. Create a new column in the data frame called daily, which is the sum of the rightmost 24 columns. With this column, create a histogram of the values in this column, which are supposed to be daily rainfall values. What is wrong with this picture?
 ```{r}
+#Create a new column "daily" which is the sum of the rightmost 24 columns
 rain.df$daily= apply(rain.df[,4:27], 1, sum)
-hist(rain.df$daily, col = "red", xlab = "Daily Rain", main = "Daily Rain in Canada")
+#Create histogram and label axis and changed color of bars
+hist(rain.df$daily, col = "#660066", xlab = "Daily Rain", main = "Daily Rain in Canada")
 
 ```
 
@@ -45,9 +47,12 @@ hist(rain.df$daily, col = "red", xlab = "Daily Rain", main = "Daily Rain in Cana
 
 8. Create a new data frame rain.df.fixed that takes the original and fixes it for the apparent flaw you have discovered. Having done this, produce a new histogram with the corrected data and explain why this is more reasonable.
 ```{r}
+#Clear any values that were less than zero from the dataset
 rain.df[rain.df < 0] <- 0
+#Create a new column "daily" which is the sum of the rightmost 24 columns
 rain.df$daily = apply(rain.df[,4:27], 1, sum)
-hist(rain.df$daily, col = "pink", xlab = "Daily Rain", main = "Daily Rain in Canada")
+#Create histogram and label axis and changed color of bars to pink
+hist(rain.df$daily, col = "#ff99cc", xlab = "Daily Rain", main = "Daily Rain in Canada")
 ```
 
 ## Part 2
