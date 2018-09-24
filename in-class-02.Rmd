@@ -1,7 +1,7 @@
 # In-Class: September 19, 2018
 
 
-## Part 1 (You can do this with or without dplyr)
+## Part 1 
 
 1. The data set at rnf6080.dat records hourly rainfall at a certain location in Canada, every day from 1960 to 1980. First, we need to load the data set into R using the command read.table(). Use the help function to learn what arguments this function takes. Once you have the necessary input, load the data set into R and make it a data frame called rain.df.
 ```{r}
@@ -25,7 +25,7 @@ rain.df[5,7] #Pulls value at (5,7)
 ```{r}
 rain.df[2,] #Pulls each value of row 2
 ```
-6. Explain what the command below doesby running it on your data and examining the object. (You may find the display functions head() and tail() useful here.) Is it clear now what the last 24 columns represent?
+6. Explain what the command below does by running it on your data and examining the object. (You may find the display functions head() and tail() useful here.) Is it clear now what the last 24 columns represent?
 
 ```{r}
 names(rain.df) <- c("year","month","day",seq(0,23)) #Gives text names to the first 3 columns and numbers the remaining ones
@@ -42,8 +42,11 @@ tail(rain.df)
 #Create a new column "daily" which is the sum of the rightmost 24 columns
 rain.df$daily= apply(rain.df[,4:27], 1, sum)
 #Create histogram and label axis and changed color of bars
-hist(rain.df$daily, col = "#660066", xlab = "Daily Rain (cm)", main = "Daily Rain in Canada")
+hist(rain.df$daily, col = "#660066", xlab = "Daily Rain", main = "Daily Rain in Canada")
 ```
+
+**This histogram shows data points <0 which do not make practal sense given the nature of our data set (rainfall).  This is skewing the graph and making it impossible to analyze properly.**
+
 
 8. Create a new data frame rain.df.fixed that takes the original and fixes it for the apparent flaw you have discovered. Having done this, produce a new histogram with the corrected data and explain why this is more reasonable.
 
@@ -53,5 +56,7 @@ rain.df[rain.df < 0] <- 0
 #Create a new column "daily" which is the sum of the rightmost 24 columns
 rain.df$daily = apply(rain.df[,4:27], 1, sum)
 #Create histogram and label axis and changed color of bars to pink
-hist(rain.df$daily, col = "#ff99cc", xlab = "Daily Rain (cm)", main = "Daily Rain in Canada")
+hist(rain.df$daily, col = "#ff99cc", xlab = "Daily Rain", main = "Daily Rain in Canada")
 ```
+
+** Now with the values <0 removed we only have either positive rainfall or no rainfall at all.  We are unsure of the large data points however we are not given units of measurement, therefore we cannot definitively pull them out.**
