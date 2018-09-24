@@ -37,7 +37,7 @@ tail(rain.df)
 7. Create a new column in the data frame called daily, which is the sum of the rightmost 24 columns. With this column, create a histogram of the values in this column, which are supposed to be daily rainfall values. What is wrong with this picture?
 ```{r}
 rain.df$daily= apply(rain.df[,4:27], 1, sum)
-hist(rain.df$daily)
+hist(rain.df$daily, col = "red", xlab = "Daily Rain", main = "Daily Rain in Canada")
 
 ```
 
@@ -47,7 +47,7 @@ hist(rain.df$daily)
 ```{r}
 rain.df[rain.df < 0] <- 0
 rain.df$daily = apply(rain.df[,4:27], 1, sum)
-hist(rain.df$daily)
+hist(rain.df$daily, col = "pink", xlab = "Daily Rain", main = "Daily Rain in Canada")
 ```
 
 ## Part 2
